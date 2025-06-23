@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block head %}
+{% endblock %}
+
+{% block body %}
+<div class="content">
+    <h1 style="text-align: center;">TO-DO LIST</h1>
+    {% if tasks|length < 1 %}
+        <h4 style="text-align: center;">THERE ARE NO TASKS CREATE ONE BELOW </h4>
+    {% else %}
+    <table>
+        <tr>
+            <th>Task</th>
+            <th>Added</th>
+            <th>Actions</th>
+        </tr>
+        {% for task in tasks %}
+            <tr>
+                <td>{{task.content}}</td>
+                <td>{{ task.date_created.date() }}</td>
+                <td>
+                    <a href="{{ url_for('delete', id=task.id) }}">Delete</a>
+                    <br>
+                    <a href="{{ url_for('update', id=task.id) }}">Update</a>
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+    {% endif %}
+    <br> 
+    <form action="/" method="POST">
+        <input type="text" name="content" id="content" placeholder="Enter task">
+        <input type="submit" value="Add Task">
+    </form>
+    <br>
+</div>
+{% endblock %}

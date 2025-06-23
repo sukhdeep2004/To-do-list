@@ -1,0 +1,17 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+ table, th, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+        padding: 8px;
+}
+.content {
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* horizontal centering */
+        min-height: 100vh; /* makes it vertically centered in viewport */
+        text-align: center;
+    }
