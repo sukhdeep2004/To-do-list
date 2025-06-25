@@ -1,17 +1,131 @@
+/* main.css */
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background-color: #f4f7fa;
+    color: #333;
 }
 
- table, th, td {
-        border: 1px solid black;
-        border-collapse: collapse;
-        padding: 8px;
-}
 .content {
-        display: flex;
-        flex-direction: column;
-        align-items: center; /* horizontal centering */
-        min-height: 100vh; /* makes it vertically centered in viewport */
-        text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    text-align: center;
+}
+
+h1 {
+    color: #2c3e50;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+table {
+    width: 80%;
+    max-width: 800px;
+    border-collapse: collapse;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+th {
+    background-color: #3498db;
+    color: #fff;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+td {
+    font-size: 0.95em;
+}
+
+tr:hover {
+    background-color: #f9f9f9;
+}
+
+form {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+input[type="text"] {
+    padding: 10px;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 300px;
+    transition: border-color 0.3s;
+}
+
+input[type="text"]:focus {
+    border-color: #3498db;
+    outline: none;
+}
+
+button, a.button {
+    padding: 10px 20px;
+    font-size: 1em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    color: #fff;
+    transition: background-color 0.3s;
+}
+
+button[type="submit"] {
+    background-color: #2ecc71;
+}
+
+button[type="submit"]:hover {
+    background-color: #27ae60;
+}
+
+a.button.delete {
+    background-color: #e74c3c;
+}
+
+a.button.delete:hover {
+    background-color: #c0392b;
+}
+
+a.button.update {
+    background-color: #3498db;
+}
+
+a.button.update:hover {
+    background-color: #2980b9;
+}
+
+.no-tasks {
+    color: #7f8c8d;
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+    table {
+        width: 100%;
     }
+    input[type="text"] {
+        width: 100%;
+    }
+    form {
+        flex-direction: column;
+        align-items: center;
+    }
+}
